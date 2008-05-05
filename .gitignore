@@ -1,3 +1,4 @@
+.DS_Store
 */config/database.yml
 */db/schema.rb
 */db/*.sqlite3
