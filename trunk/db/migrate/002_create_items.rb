@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string      :name
       t.text        :description
-      t.boolean     :is_service, :is_good
+      t.boolean     :is_service, :is_commodity
       t.integer     :user_id, :amount
       t.timestamps
     end
