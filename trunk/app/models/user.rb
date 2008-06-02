@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
-  has_many :trades
-  has_many :items
-  has_many :live_searches
+  has_many  :trades
+  has_many  :trade_items
+  has_many  :items
+  has_many  :live_searches
+  
+  named_scope :active, :conditions => {:is_active => true}
+  named_scope :inactive, :conditions => {:is_active => false}
   
   #--{ Basic Authentication methods }--
 
