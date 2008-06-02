@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
   named_scope :active, :conditions => {:is_active => true}
   named_scope :inactive, :conditions => {:is_active => false}
   
+  validates_presence_of   :login
+  validates_uniqueness_of :login
+  
+  validates_presence_of   :password
+  
   #--{ Basic Authentication methods }--
 
     #--{ Example Usage: User.find(:first).password = "foobar" }--
