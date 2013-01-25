@@ -38,7 +38,12 @@ describe UsersController do
     end
 
     it 'updates nickname' do
-      pending 'tokens from session'
+      @user.nickname.should_not == 'foo'
+      put :update, token: @session.token, id: @user.id, user: {nickname: 'foo'}
+      response.status.should == 200
+
+      @user.reload
+      @user.nickname.should == 'foo'
     end
 
     it 'unregisters'
