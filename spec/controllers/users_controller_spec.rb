@@ -16,8 +16,24 @@ describe UsersController do
   end
 
   context 'with a registered' do
-    let!(:user) {FactoryGirl.create :user}
-    it 'updates nickname'
+    before do
+      @user    = FactoryGirl.create :user
+      @session = FactoryGirl.create :session, user: @user
+    end
+
+    it 'requires a token to update' do
+      put :update, id: @user.id, user: {nickname: 'foo'}
+      response.status.should == 401
+
+      put :update, token: @session.token, id: @user.id, user: {nickname: 'foo'}
+      response.status.should == 200
+    end
+
+    it 'requires a token to unregister'
+    it 'updates nickname' do
+      pending 'tokens from session'
+    end
+
     it 'unregisters'
     it 'views public profile'
   end

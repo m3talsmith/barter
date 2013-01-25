@@ -23,7 +23,7 @@ gem 'mongoid', '~>3.0'
 gem 'puma'
 gem 'digest-sha3'
 
-group :tests do
+group :test, :development do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'capybara', '1.1.2'

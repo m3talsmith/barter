@@ -4,4 +4,6 @@ class User
 
   field :email
   field :nickname
+
+  has_many :sessions
 end
