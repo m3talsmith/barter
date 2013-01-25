@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :force_token, except: [:create]
+  before_filter :find_user, except: [:create]
 
   def create
     user = User.create params[:user]
@@ -7,9 +8,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    if user.update_attributes params[:user]
-      render json: user.to_json
+    if @user.update_attributes params[:user]
+      render json: @user.to_json
     end
+  end
+
+  def destroy
+    if @user.destroy
+      render json: @user.to_json
+    end
+  end
+private
+  def find_user
+    @user = User.find(params[:id])
   end
 end

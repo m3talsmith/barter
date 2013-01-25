@@ -29,7 +29,14 @@ describe UsersController do
       response.status.should == 200
     end
 
-    it 'requires a token to unregister'
+    it 'requires a token to unregister' do
+      delete :destroy, id: @user.id
+      response.status.should == 401
+
+      delete :destroy, token: @session.token, id: @user.id
+      response.status.should == 200
+    end
+
     it 'updates nickname' do
       pending 'tokens from session'
     end
