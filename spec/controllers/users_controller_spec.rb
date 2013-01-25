@@ -46,7 +46,13 @@ describe UsersController do
       @user.nickname.should == 'foo'
     end
 
-    it 'unregisters'
+    it 'unregisters' do
+      delete :destroy, token: @session.token, id: @user.id
+      response.status.should == 200
+
+      expect{User.find(@user.id)}.to raise_error(Mongoid::Errors::DocumentNotFound)
+    end
+
     it 'views public profile'
   end
 end
