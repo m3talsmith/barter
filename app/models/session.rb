@@ -12,7 +12,8 @@ class Session
 
   class << self
     def authenticate email, password
-      user = User.where(email: email, password: User.digest_password(password)).first
+      user = User.where(email: email).first
+      user = User.where(email: email, password_digest: User.digest_password("#{password}#{user.created_at}")).first if user
       Session.create(user_id: user.id) if user
     end 
   end

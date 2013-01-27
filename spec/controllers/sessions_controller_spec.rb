@@ -16,7 +16,7 @@ describe SessionsController do
     user_session = Session.first
 
     json = JSON.parse(response.body)
-    json['user_id'].should == user.id
+    json['user_id'].should == user.id.to_s
     json['token'].should   == user_session.token
   end
 end
