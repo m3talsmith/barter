@@ -11,8 +11,8 @@ class Session
   after_create :generate_token
 
   class << self
-    def authenticate(email, password)
-      user = User.where(email: email, User.digest_password(password))
+    def authenticate email, password
+      user = User.where(email: email, password: User.digest_password(password)).first
       Session.create(user_id: user.id) if user
     end 
   end
