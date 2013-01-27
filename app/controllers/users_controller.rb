@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes params[:user]
       render json: @user.to_json
+    else
+      binding.pry
     end
   end
 

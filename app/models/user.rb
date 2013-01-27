@@ -10,8 +10,8 @@ class User
 
   attr_accessor :password, :password_confirmation
 
-  validates :password, presence: true, confirmation: true
-  validates :email, presence: true
+  validates :password, presence: true, confirmation: true, on: :create
+  validates :email, presence: true, on: :create
 
   has_many :sessions
 
