@@ -82,7 +82,7 @@ GEM
       coffee-script (>= 1.0.0)
       sprockets (>= 2.0.3)
       tilt (>= 1.3.3)
-    hike (1.2.1)
+    hike (1.2.3)
     httparty (0.10.0)
       multi_json (~> 1.0)
       multi_xml
@@ -114,7 +114,7 @@ GEM
       rake
       rspec (>= 2.9)
     moped (1.3.2)
-    multi_json (1.5.0)
+    multi_json (1.13.1)
     multi_xml (0.5.2)
     nokogiri (1.5.6)
     origin (1.0.11)
@@ -127,7 +127,7 @@ GEM
       pry (~> 0.9.10)
     puma (1.6.3)
       rack (~> 1.2)
-    rack (1.4.4)
+    rack (1.4.7)
     rack-cache (1.2)
       rack (>= 0.4)
     rack-ssl (1.3.2)
@@ -183,7 +183,7 @@ GEM
       rubyzip
       websocket (~> 1.0.4)
     slop (3.4.3)
-    sprockets (2.2.2)
+    sprockets (2.2.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -194,7 +194,7 @@ GEM
       libv8 (~> 3.11.8.12)
       ref
     thor (0.17.0)
-    tilt (1.3.3)
+    tilt (1.4.1)
     timecop (0.5.9.1)
     treetop (1.4.12)
       polyglot
