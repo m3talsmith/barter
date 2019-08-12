@@ -94,7 +94,7 @@ GEM
     jquery-ui-rails (3.0.1)
       jquery-rails
       railties (>= 3.1.0)
-    json (1.7.6)
+    json (1.8.6)
     launchy (2.1.2)
       addressable (~> 2.3)
     libv8 (3.11.8.13)
@@ -153,7 +153,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
-    rdoc (3.12)
+    rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.2)
     rspec (2.12.0)
